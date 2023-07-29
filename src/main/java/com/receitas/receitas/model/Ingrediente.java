@@ -1,8 +1,6 @@
 package com.receitas.receitas.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +13,12 @@ import lombok.Setter;
 @Entity
 public class Ingrediente {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long id ;
+
     //jopin colun vai guardar a chave na coluna ID_RECEITA
     @ManyToOne
-    @JoinColumn(name = "id_receita")
+    @JoinColumn
     private Receita receita;
 }

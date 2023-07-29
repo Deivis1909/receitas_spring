@@ -18,7 +18,7 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
 
-    @GetMapping("/busca")
+    @GetMapping
     public List<Receita> buscaReceita(){
 
         return this.receitaService.buscaReceitas();
